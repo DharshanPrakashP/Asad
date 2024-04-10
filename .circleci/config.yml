@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+
+      - run:
+          name: Build executable
+          command: |
+            sleep 300  # Wait for 5 minutes (adjust as needed)
+            pyinstaller --onefile main.py
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
