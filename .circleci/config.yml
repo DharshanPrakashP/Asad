@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/python:3.9
+      - image: cimg/python:3.9
 
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Build executable
           command: |
-            sleep 300  # Wait for 5 minutes (adjust as needed)
+            sleep 100  # Wait for 5 minutes (adjust as needed)
             pyinstaller --onefile main.py
 
 workflows:
