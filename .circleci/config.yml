@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Build executable
           command: |
-            sleep 300  # Wait for 5 minutes (adjust as needed)
+            sleep 60  # Wait for 5 minutes (adjust as needed)
             pyinstaller --onefile main.py
 
 workflows:
