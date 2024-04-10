@@ -21,14 +21,14 @@ class App:
             tab = ttk.Frame(self.tab_control)
             self.tab_control.add(tab, text=tab_name)
 
-        # Create labels for each tab
+        # Creatin labels for each tab
         self.labels = {}
         for tab_name in tabs:
             label = ttk.Label(self.tab_control.tab(tab_name), text="Loading...")
             label.pack(padx=10, pady=10)
             self.labels[tab_name] = label
 
-        # Start monitoring
+        # Starting monitor process
         self.start_monitoring()
 
     def start_monitoring(self):
